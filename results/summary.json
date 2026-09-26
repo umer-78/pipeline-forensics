@@ -1,0 +1,204 @@
+{
+ "versions": [
+  {
+   "version": "gpt-4o-2024-05-13",
+   "accuracy": 0.905,
+   "failures": 95,
+   "stop": [],
+   "blame": {
+    "wrong answer (every check passed)": 66,
+    "hit the token limit": 15,
+    "stopped before stating an answer": 9,
+    "extracted the wrong number": 5
+   }
+  },
+  {
+   "version": "gpt-4o-2024-08-06",
+   "accuracy": 0.909,
+   "failures": 91,
+   "stop": [],
+   "blame": {
+    "wrong answer (every check passed)": 63,
+    "hit the token limit": 5,
+    "stopped before stating an answer": 10,
+    "extracted the wrong number": 13
+   }
+  },
+  {
+   "version": "gemini-1.5-pro-001",
+   "accuracy": 0.836,
+   "failures": 164,
+   "stop": [],
+   "blame": {
+    "wrong answer (every check passed)": 104,
+    "extracted the wrong number": 52,
+    "stopped before stating an answer": 8
+   }
+  },
+  {
+   "version": "gemini-1.5-pro-002",
+   "accuracy": 0.817,
+   "failures": 183,
+   "stop": [
+    "\n\n"
+   ],
+   "blame": {
+    "stopped before stating an answer": 162,
+    "wrong answer (every check passed)": 21
+   }
+  },
+  {
+   "version": "gemini-1.5-flash-001",
+   "accuracy": 0.785,
+   "failures": 215,
+   "stop": [],
+   "blame": {
+    "wrong answer (every check passed)": 114,
+    "extracted the wrong number": 87,
+    "stopped before stating an answer": 14
+   }
+  },
+  {
+   "version": "gemini-1.5-flash-002",
+   "accuracy": 0.328,
+   "failures": 672,
+   "stop": [
+    "\n\n"
+   ],
+   "blame": {
+    "stopped before stating an answer": 652,
+    "extracted the wrong number": 17,
+    "wrong answer (every check passed)": 3
+   }
+  },
+  {
+   "version": "gemini-1.0-pro-001",
+   "accuracy": 0.783,
+   "failures": 217,
+   "stop": [
+    "\n\n"
+   ],
+   "blame": {
+    "wrong answer (every check passed)": 202,
+    "stopped before stating an answer": 9,
+    "extracted the wrong number": 6
+   }
+  },
+  {
+   "version": "gemini-1.0-pro-002",
+   "accuracy": 0.816,
+   "failures": 184,
+   "stop": [],
+   "blame": {
+    "wrong answer (every check passed)": 159,
+    "extracted the wrong number": 16,
+    "stopped before stating an answer": 9
+   }
+  },
+  {
+   "version": "mistral-large-2402",
+   "accuracy": 0.694,
+   "failures": 306,
+   "stop": [
+    "\n\n"
+   ],
+   "blame": {
+    "stopped before stating an answer": 231,
+    "wrong answer (every check passed)": 66,
+    "extracted the wrong number": 9
+   }
+  },
+  {
+   "version": "mistral-large-2407",
+   "accuracy": 0.912,
+   "failures": 88,
+   "stop": [],
+   "blame": {
+    "wrong answer (every check passed)": 52,
+    "hit the token limit": 16,
+    "stopped before stating an answer": 10,
+    "extracted the wrong number": 10
+   }
+  },
+  {
+   "version": "llama-3-70b",
+   "accuracy": 0.805,
+   "failures": 195,
+   "stop": [
+    "\n\n"
+   ],
+   "blame": {
+    "wrong answer (every check passed)": 177,
+    "stopped before stating an answer": 6,
+    "extracted the wrong number": 12
+   }
+  },
+  {
+   "version": "llama-3.1-70b-instruct",
+   "accuracy": 0.938,
+   "failures": 62,
+   "stop": [],
+   "blame": {
+    "wrong answer (every check passed)": 58,
+    "hit the token limit": 3,
+    "stopped before stating an answer": 1
+   }
+  }
+ ],
+ "regression": {
+  "base": "gemini-1.5-flash-001",
+  "candidate": "gemini-1.5-flash-002",
+  "broke": 488,
+  "blame": {
+   "stopped before stating an answer": 479,
+   "extracted the wrong number": 9
+  },
+  "examples": [
+   {
+    "answer": "It took Finley 30 minutes to cook rice.",
+    "then": "d is 30 minutes + 50 minutes + 40 minutes = 120 minutes.\n\n**Answer:** It took Finley 120 minutes to cook all the food. \n"
+   },
+   {
+    "answer": "Amy starts with 2 palettes * 4 colors/palette = 8 colors from palettes.",
+    "then": "s / 2 = 3 colors\n   - Total remaining: 22 colors - 3 colors = 19 colors\n\n**Answer:** Amy has 19 eyeshadow colors left. \n"
+   },
+   {
+    "answer": "Each horse eats 5 pounds of oats per meal * 2 meals/day = 10 pounds of oats per day.",
+    "then": "ds / 50 pounds per bag = 4 bags of oats.\n\n**Answer:** Uncle Ben needs 4 bags of oats to feed his horses for five days. \n"
+   }
+  ],
+  "stop": {
+   "base": [],
+   "candidate": [
+    "\n\n"
+   ]
+  }
+ },
+ "injection": {
+  "prompt lost the question": {
+   "injected": 200,
+   "failed": 200,
+   "blamed_right": 200
+  },
+  "stopped before stating an answer": {
+   "injected": 200,
+   "failed": 140,
+   "blamed_right": 140
+  },
+  "hit the token limit": {
+   "injected": 200,
+   "failed": 196,
+   "blamed_right": 196
+  },
+  "extracted the wrong number": {
+   "injected": 194,
+   "failed": 194,
+   "blamed_right": 194
+  },
+  "wrong answer (every check passed)": {
+   "injected": 200,
+   "failed": 200,
+   "blamed_right": 200
+  }
+ }
+}

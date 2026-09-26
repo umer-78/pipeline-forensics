@@ -1,0 +1,20 @@
+[project]
+name = "pipeline-forensics"
+version = "0.1.0"
+description = "Trace multi-step AI pipelines and find the step a bad answer came from"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = ["numpy==2.4.6", "pyyaml>=6"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["forensics"]
+
+[tool.setuptools.package-data]
+forensics = ["versions.yaml"]
