@@ -1,5 +1,7 @@
 # pipeline-forensics
 
+**Live demo:** https://umer-78.github.io/pipeline-forensics/ (every version's failures by step, and the regression a stop sequence caused)
+
 When a multi-step AI pipeline gives a bad answer, which step broke it? This is a tracing layer and backward analyzer that answers that question.
 
 - **Tracing.** Every run is a trace, and every step a span with input, output, timing, tokens, confidence, errors and the step's own check. It is one decorator per step, and traces are stored as JSON and indexed in SQLite.
@@ -91,4 +93,5 @@ flag(trace, "wrong total", "eval_set.jsonl")          # feedback: into the evalu
 pip install -e '.[dev]'
 pytest -q
 python -m forensics bench
+python -m forensics.demo    # rebuild the live demo's data in docs/
 ```

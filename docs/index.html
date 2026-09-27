@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipeline Forensics · Umer Hashmi</title>
+  <meta name="description" content="Tracing every step of an LLM pipeline to find which one failed: 12 model versions on GSM8K, and a 45-point regression traced to a stop sequence.">
+  <link rel="stylesheet" href="kit.css">
+  <style>:root { --accent: #9f1239; --on-accent: #fff; } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #fda4af; --on-accent: #0f0e0c; } }</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="crumb" href="https://umer-78.github.io/">← All projects</a>
+      <h1>Pipeline Forensics</h1>
+      <p class="lede">When an LLM pipeline gets an answer wrong, the model is only one suspect. The prompt may have lost the question, a stop sequence may have cut the answer off, the token limit may have hit, or the extractor may have read the wrong number. This tool records every step as a trace and blames the first one that broke. Below: 12 model versions' recorded GSM8K runs, and a regression it explained.</p>
+      <div class="links"><a class="btn primary" href="#regression">The regression, traced</a><a class="btn" href="https://github.com/umer-78/pipeline-forensics">Code and method</a></div>
+    </header>
+    <main>
+      <section class="kpis" id="kpis"></section>
+      <section class="card">
+        <h2>Where each version's failures come from</h2>
+        <p class="sub">Every wrong answer is traced step by step and blamed on the first step that broke. “Every check passed” means the pipeline worked and the model was simply wrong. Versions run with a <code>"\n\n"</code> stop sequence are marked.</p>
+        <div class="steps" id="pipe" style="margin-bottom:14px"></div>
+        <div id="stack"></div>
+        <div id="stackKey"></div>
+      </section>
+      <section class="card" id="regression">
+        <h2>The regression, traced</h2>
+        <p class="sub" id="regSub"></p>
+        <div class="readout" id="regOut"></div>
+        <h3 class="small muted" style="margin:16px 0 8px">Broken answers, in full: the text stops where the stop sequence cut it</h3>
+        <div id="examples" class="qlist"></div>
+      </section>
+      <section class="card">
+        <h2>Does it blame the right step?</h2>
+        <p class="sub">Correct GPT-4o traces, each with one step broken on purpose. A trace that still ends right has nothing to blame; of those that failed, how many were blamed on the step that was broken, for the right reason.</p>
+        <div id="inject"></div>
+      </section>
+    </main>
+    <footer>Built by <a href="https://github.com/umer-78">Umer Hashmi</a> · GSM8K runs from <a href="https://crfm.stanford.edu/helm/lite/">HELM Lite</a> (Stanford CRFM), downloaded at run time; the three broken answers shown are quoted from the bench report</footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
