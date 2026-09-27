@@ -37,6 +37,10 @@
         <h2>Where each version's failures come from</h2>
         <p class="sub">Every wrong answer is traced step by step and blamed on the first step that broke. “Every check passed” means the pipeline worked and the model was simply wrong. Versions run with a <code>"\n\n"</code> stop sequence are marked.</p>
         <div class="steps" id="pipe" style="margin-bottom:14px"></div>
+        <div class="controls">
+          <label for="sortBy">Order</label><select id="sortBy"><option value="run">as traced</option><option value="acc">most accurate first</option><option value="pipe">most pipeline faults first</option></select>
+          <label for="scale">Bar length</label><select id="scale"><option value="share">share of that version's failures</option><option value="count">number of failures</option></select>
+        </div>
         <div id="stack"></div>
         <div id="stackKey"></div>
       </section>
@@ -46,6 +50,17 @@
         <div class="readout" id="regOut"></div>
         <h3 class="small muted" style="margin:16px 0 8px">Broken answers, in full: the text stops where the stop sequence cut it</h3>
         <div id="examples" class="qlist"></div>
+      </section>
+      <section class="card" id="compare">
+        <h2>Compare any two versions</h2>
+        <p class="sub">The blame counts for two versions side by side. They are totals, so they show which steps got better or worse overall, not which questions changed; the traced regression above follows the questions themselves.</p>
+        <div class="controls">
+          <label for="cmpA">Before</label><select id="cmpA"></select>
+          <label for="cmpB">After</label><select id="cmpB"></select>
+          <button type="button" class="btn" id="cmpSwap">Swap</button>
+        </div>
+        <div class="readout" id="cmpOut"></div>
+        <p class="small muted" id="cmpNote" style="margin:12px 0 0"></p>
       </section>
       <section class="card">
         <h2>Does it blame the right step?</h2>
