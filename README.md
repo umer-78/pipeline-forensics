@@ -1,5 +1,7 @@
 # pipeline-forensics
 
+[![CI](https://github.com/umer-78/pipeline-forensics/actions/workflows/ci.yml/badge.svg)](https://github.com/umer-78/pipeline-forensics/actions/workflows/ci.yml)
+
 [![Pipeline Forensics: the live demo](.github/preview.jpg)](https://umer-78.github.io/pipeline-forensics/)
 
 **Live demo:** https://umer-78.github.io/pipeline-forensics/ (every version's failures by step, and the regression a stop sequence caused)
@@ -97,3 +99,7 @@ pytest -q
 python -m forensics bench
 python -m forensics.demo    # rebuild the live demo's data in docs/
 ```
+
+## Licence
+
+MIT licence (see [LICENSE](LICENSE)). The data it evaluates (HELM Lite's recorded GSM8K runs) keeps its own licence and is downloaded when you run it.
