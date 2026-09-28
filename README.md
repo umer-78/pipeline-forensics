@@ -4,7 +4,7 @@
 
 [![Pipeline Forensics: the live demo](.github/preview.jpg)](https://umer-78.github.io/pipeline-forensics/)
 
-**Live demo:** https://umer-78.github.io/pipeline-forensics/ (every version's failures by step, and the regression a stop sequence caused)
+**Live demo:** https://umer-78.github.io/pipeline-forensics/ (every version's failures by step, the regression a stop sequence caused, and any two versions compared side by side)
 
 When a multi-step AI pipeline gives a bad answer, which step broke it? This is a tracing layer and backward analyzer that answers that question.
 
