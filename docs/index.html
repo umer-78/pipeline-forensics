@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" data-scene="pipeline">
+<html lang="en" data-scene="forensics" data-look="oswald" data-hero="center" data-card="soft" data-motif="lines" data-backdrop="grid">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pipeline Forensics · Umer Hashmi</title>
   <meta name="description" content="Tracing every step of an LLM pipeline to find which one failed: 12 model versions on GSM8K, and a 45-point regression traced to a stop sequence.">
-  <meta name="theme-color" content="#9f1239">
+  <meta name="theme-color" content="#b0529b">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Umer Hashmi · projects">
   <meta property="og:title" content="Pipeline Forensics · Umer Hashmi">
@@ -16,10 +16,15 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600&family=Source+Code+Pro:wght@400;600&display=swap" id="fx-fonts">
   <link rel="stylesheet" href="kit.css">
   <link rel="stylesheet" href="fx.css">
   <style>:root { --accent: #9f1239; --fx-2: #f59e0b; --fx-3: #6366f1; --on-accent: #fff; } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #fda4af; --on-accent: #0f0e0c; } }</style>
+<style id="fx-look">:root[data-look] { --font: 'Source Sans 3', system-ui, -apple-system, "Segoe UI", sans-serif; --fx-display: 'Oswald', system-ui, sans-serif; --mono: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; --fx-display-weight: 600; --fx-tracking: 0em; --fx-title-case: uppercase; --fx-radius: 16px; --fx-hero-radius: 26px; --fx-control-radius: 14px; --accent: #b0529b; --accent-hover: #9c4089; --accent-soft: #ffebf9; --accent-glow: rgb(176 82 155 / 0.16); --on-accent: #ffffff; --fx-2: #6f9518; --fx-3: #d38e1e; --bg: #fef6fc; --bg-elevated: #fffdfe; --surface: #fffeff; --surface-2: #faf0f7; --surface-3: #f3e7ef; --border: #e6dae2; --border-strong: #cdbfc9; --line: #e6dae2; }
+@media (prefers-color-scheme: dark) { :root[data-look]:not([data-theme="light"]) { --accent: #da7ec4; --accent-hover: #e995d4; --accent-soft: rgb(218 126 196 / 0.14); --accent-glow: rgb(218 126 196 / 0.2); --on-accent: #1a0c17; --fx-2: #9ac158; --fx-3: #f4ae4a; --bg: #160c13; --bg-elevated: #1d121a; --surface: #21151e; --surface-2: #291d26; --surface-3: #332730; --border: #372d34; --border-strong: #4a3e46; --line: #372d34; } }
+:root[data-look][data-theme="dark"] { --accent: #da7ec4; --accent-hover: #e995d4; --accent-soft: rgb(218 126 196 / 0.14); --accent-glow: rgb(218 126 196 / 0.2); --on-accent: #1a0c17; --fx-2: #9ac158; --fx-3: #f4ae4a; --bg: #160c13; --bg-elevated: #1d121a; --surface: #21151e; --surface-2: #291d26; --surface-3: #332730; --border: #372d34; --border-strong: #4a3e46; --line: #372d34; }</style>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js" data-fx>
+<link rel="modulepreload" href="fx3d.js" data-fx>
 </head>
 <body>
   <div class="wrap">
