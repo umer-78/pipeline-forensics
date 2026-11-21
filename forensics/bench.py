@@ -1,7 +1,6 @@
 """Forensics on every model version's GSM8K failures, on the regression Gemini 1.5 Flash 002
 shipped with, and an injection test of the analyzer itself."""
 import json
-import re
 from collections import Counter
 from pathlib import Path
 
