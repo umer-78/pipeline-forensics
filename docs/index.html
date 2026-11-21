@@ -25,6 +25,9 @@
 :root[data-look][data-theme="dark"] { --accent: #da7ec4; --accent-hover: #e995d4; --accent-soft: rgb(218 126 196 / 0.14); --accent-glow: rgb(218 126 196 / 0.2); --on-accent: #1a0c17; --fx-2: #9ac158; --fx-3: #f4ae4a; --bg: #160c13; --bg-elevated: #1d121a; --surface: #21151e; --surface-2: #291d26; --surface-3: #332730; --border: #372d34; --border-strong: #4a3e46; --line: #372d34; }</style>
 <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js" data-fx>
 <link rel="modulepreload" href="fx3d.js" data-fx>
+<link rel="canonical" href="https://umer-78.github.io/pipeline-forensics/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23b0529b'/><text x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='system-ui,sans-serif' font-weight='700'>P</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Pipeline Forensics · Umer Hashmi", "url": "https://umer-78.github.io/pipeline-forensics/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (runs in a web browser)", "isAccessibleForFree": true, "author": {"@type": "Person", "name": "Umer Hashmi", "url": "https://umer-78.github.io/"}, "description": "Tracing every step of an LLM pipeline to find which one failed: 12 model versions on GSM8K, and a 45-point regression traced to a stop sequence.", "image": "https://umer-78.github.io/pipeline-forensics/og.jpg", "sameAs": "https://github.com/umer-78/pipeline-forensics"}</script>
 </head>
 <body>
   <div class="wrap">
@@ -34,7 +37,7 @@
       <h1>Pipeline Forensics</h1>
       <p class="lede">When an LLM pipeline gets an answer wrong, the model is only one suspect. The prompt may have lost the question, a stop sequence may have cut the answer off, the token limit may have hit, or the extractor may have read the wrong number. This tool records every step as a trace and blames the first one that broke. Below: 12 model versions' recorded GSM8K runs, and a regression it explained.</p>
       <div class="links"><a class="btn primary" href="#regression">The regression, traced</a><a class="btn" href="https://github.com/umer-78/pipeline-forensics">Code and method</a></div>
-      <div class="fx-tags" aria-hidden="true"><div><span>python</span><span>llm</span><span>observability</span><span>tracing</span><span>evaluation</span><span>helm</span><span>python</span><span>llm</span><span>observability</span><span>tracing</span><span>evaluation</span><span>helm</span></div></div>
+      <div class="fx-tags"><div><span>python</span><span>llm</span><span>observability</span><span>tracing</span><span>evaluation</span><span>helm</span></div></div>
     </header>
     <main>
       <section class="kpis" id="kpis"></section>
